@@ -1,7 +1,8 @@
 from selenium import webdriver
 from time import sleep
 
-class InstaBot():
+
+class InstaBot:
 
     def __init__(self, username, password):
         self.browser = webdriver.Chrome()
@@ -29,7 +30,7 @@ class InstaBot():
     def scroll_and_like(self):
         # TEST CODE: scrolling
         i = 0
-        while (i < 20):
+        while i < 20:
             # print(i)
             start = 1000 * i
             end = 1000 * (i + 1)
@@ -47,6 +48,7 @@ class InstaBot():
         post.click()
 
         # like and close
+
 
 # ENTER username and password for the account you are logging into
 username = input("Username: ")
