@@ -1,5 +1,6 @@
 from selenium import webdriver
 from time import sleep
+import random
 
 
 class InstaBot:
@@ -47,7 +48,18 @@ class InstaBot:
         post = self.browser.find_element_by_class_name("_9AhH0")
         post.click()
 
-        # like and close
+        # views 100 posts and randomly like
+        i = 0
+        while i < 5:
+            # randomly like 80% of posts
+            n = random.random()
+            if n < .8:
+                self.browser.find_elements_by_css_selector("[aria-label='Like']").click()
+
+            # next post
+            self.browser.find_element_by_xpath("//a[contains(text(), 'Next')]").click()
+            sleep(2)
+            i += 1
 
 
 # ENTER username and password for the account you are logging into
