@@ -50,12 +50,14 @@ class InstaBot:
 
         # views 100 posts and randomly like
         i = 0
-        while i < 5:
+        while i < 10:
             # randomly like 80% of posts
             n = random.random()
             if n < .8:
-                self.browser.find_elements_by_css_selector("[aria-label='Like']").click()
-
+                sleep(2)
+                like_path = self.browser.find_element_by_xpath('\
+                /html/body/div[4]/div[2]/div/article/div[3]/section[1]/span[1]/button/div')
+                like_path.click()
             # next post
             self.browser.find_element_by_xpath("//a[contains(text(), 'Next')]").click()
             sleep(2)
@@ -65,6 +67,7 @@ class InstaBot:
 # ENTER username and password for the account you are logging into
 username = input("Username: ")
 password = input("Password: ")
+
 
 # launching Instagram Bot
 instaBot = InstaBot(username, password)
