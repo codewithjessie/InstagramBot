@@ -21,8 +21,8 @@ class InstaBot:
         sleep(3)
 
         # save password? - not now
-        self.browser.find_element_by_xpath("//button[contains(text(), 'Not Now')]").click()
-        sleep(3)
+        #self.browser.find_element_by_xpath("//button[contains(text(), 'Not Now')]").click()
+        #sleep(3)
 
         # turn on notifications? - not now
         self.browser.find_element_by_xpath("//button[contains(text(), 'Not Now')]").click()
@@ -48,9 +48,10 @@ class InstaBot:
         post = self.browser.find_element_by_class_name("_9AhH0")
         post.click()
 
-        # views 100 posts and randomly like
+        # views 12 posts and randomly like
+        #note: 12 is the maximum on web browser 
         i = 0
-        while i < 10:
+        while i < 12:
             # randomly like 80% of posts
             n = random.random()
             if n < .8:
@@ -58,6 +59,7 @@ class InstaBot:
                 like_path = self.browser.find_element_by_xpath('\
                 /html/body/div[4]/div[2]/div/article/div[3]/section[1]/span[1]/button/div')
                 like_path.click()
+                sleep(1)
             # next post
             self.browser.find_element_by_xpath("//a[contains(text(), 'Next')]").click()
             sleep(2)
