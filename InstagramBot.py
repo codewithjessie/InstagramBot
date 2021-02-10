@@ -37,6 +37,13 @@ class InstaBot:
             end = 1000 * (i + 1)
             self.browser.execute_script(f"window.scrollTo({start},{end})")
             sleep(1)
+            n = random.random()
+            if n < .8:
+                sleep(2)
+                like_path = self.browser.find_element_by_xpath('\
+                /html/body/div[1]/section/main/section/div/div[2]/div/article[4]/div[3]/section[1]/span[1]/button/div')
+                like_path.click()
+                sleep(1)
             i += 1
 
     # randomly likes posts on explore page
@@ -74,5 +81,5 @@ password = input("Password: ")
 # launching Instagram Bot
 instaBot = InstaBot(username, password)
 instaBot.login()
-# instaSession.scroll_and_like()
-instaBot.browse_explore()
+instaBot.scroll_and_like()
+#instaBot.browse_explore()
