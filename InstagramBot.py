@@ -72,6 +72,15 @@ class InstaBot:
             sleep(2)
             i += 1
 
+    # browsing various relevant hashtags
+    def browse_explore(self):
+        list_hashtags = ['python','coding']
+        for i in list_hashtags:
+            link = "https://www.instagram.com/explore/tags/" + i
+            self.browser.get(link)
+            sleep(2)
+
+
 
 # ENTER username and password for the account you are logging into
 username = input("Username: ")
