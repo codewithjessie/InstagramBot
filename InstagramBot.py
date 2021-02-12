@@ -73,8 +73,8 @@ class InstaBot:
             i += 1
 
     # browsing various relevant hashtags
-    def browse_explore(self):
-        list_hashtags = ['python','coding']
+    def browse_hashtags(self):
+        list_hashtags = ['python','coding','computerscience','AI','artificialintelligence']
         for i in list_hashtags:
             link = "https://www.instagram.com/explore/tags/" + i
             self.browser.get(link)
